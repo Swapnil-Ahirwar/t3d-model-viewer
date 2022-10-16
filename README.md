@@ -1,6 +1,6 @@
 # # t3d-Model-Viewer
 
-t3d-Model Viewer lets you upload and view 3d (GLT) based models.
+t3d-Model Viewer lets you upload and view 3d (GLB) based models.
 This is based on three.js library.
 
 ## Features
