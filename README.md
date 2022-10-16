@@ -4,9 +4,9 @@ t3d-Model Viewer lets you upload and view 3d (GLB) based models.
 This is based on three.js library.
 
 ## Features
-- Export a 3D model and we will retain the upload model with us.
-- Render differ models on our viewer with is compatible with any device.
-- Control the projection, size, angle all with your cursor.
+- Export a 3D model and we will retain the uploaded model with us.
+- Render different models on our responsive viewer.
+- Control the projection, size, angle all with just your cursor.
 
 ## Tech
 - [AngularJS] - HTML enhanced for web apps!
