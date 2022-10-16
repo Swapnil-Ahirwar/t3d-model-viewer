@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Models</mat-toolbar>
+    <mat-nav-list>
+      <a (click)="notifyModelSelected(file.url)" mat-list-item class="list-group list-group-flush" *ngFor="let file of fileInfos | async">{{ file.name }}</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>3D Model Viewer</span>
+      <span class="example-spacer"></span>
+      <div>
+        <button class="btn btn-success btn-lg" type="button" (click)="fileInput.click()">
+          <span>Upload</span>
+          <input #fileInput type="file" (change)="selectFile($event)" style="display:none;" />
+        </button>
+      </div>
+    </mat-toolbar>
+    <mat-progress-bar *ngIf="progress" mode="indeterminate" color="accent"></mat-progress-bar>
+    
+    <!-- <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>  -->
+    <div class="fxFlexFill">
+      <app-render-component></app-render-component>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
